@@ -33,6 +33,6 @@
     
     <?php   include_once('includes/footer.inc.php');?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/smoothScroll.js"></script>
+    <script src="js/jQuery/jquery.min.js"></script>
+    <script src="js/smoothScroll/smoothScroll.js"></script>
 </html>
