@@ -4,6 +4,7 @@ Our game, Jab6Boxing, is  a web application game similar to Super6 where users w
 
 This project is part of our initial training and the group consists of Ade, Alex, Alice, and Jake.
 
-x
-
 Helloooo
+
+
+aefgsr
