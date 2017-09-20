@@ -21,7 +21,11 @@
                                     <input id="submitBtn" type="submit" name="Submit" value="Log In">
                             </form>
                             <div id="register">
-                                <a href="#">   
+                                <!-- <button type="button" id="registerBtn" class="btn btn-link" data-toggle="modal" data-target="#registerModal">
+                                    <i class="fa fa-user-plus fa-1p4x" aria-hidden="true"></i>
+                                    <span class="fs-14">Register</span>
+                                </button> -->
+                                <a id="registerBtn" href="#" data-toggle="modal" data-target="#registerModal">   
                                     <i class="fa fa-user-plus fa-1p4x" aria-hidden="true"></i>
                                     <span class="fs-14">Register</span>
                                 </a>
@@ -39,5 +43,49 @@
                         <li><a href="#" target="_blank">How to Play</a></li>
                     </ul>
                 </div>   
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="registerModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header cl-white bg-jab6 bord-rd-tl bord-rd-tr">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">REGISTRATION DETAILS</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- <form method="post" action="">
+                        <label>firstName</label>
+                        <input type="text" name="firstName"/>
+                        <br/>
+                        <label>lastName</label>
+                        <input type="text" name="lastName"/>
+                        <br/>
+                        <label>dob</label>
+                        <input type="text" name="dob"/>
+                        <br/>
+                        <label>username</label>
+                        <input type="text" name="firstName"/>
+                        <br/>
+                        <label>password</label>
+                        <input type="text" name="firstName"/>
+                        <br/>
+                        <label>email</label>
+                        <input type="text" name="email"/>
+                        <br/>
+                        <label>phone</label>
+                        <input type="text" name="phone"/>
+                        <br/>
+                        <input type="submit"/>
+                    </form> -->
+                </div>
+                <div class="modal-footer bord-rd-bl bord-rd-br">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            
             </div>
         </div>

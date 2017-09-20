@@ -8,6 +8,10 @@ body {
     color: #5B5B5B;
 }
 
+.bg-jab6 {
+    background: linear-gradient(90deg, #122d68 20%, #d61726);
+}
+
 .w-100 {
     width: 100px;
 }
@@ -111,6 +115,22 @@ body {
 
 .bord-rd {
     border-radius: 5px;
+}
+
+.bord-rd-tl {
+    border-top-left-radius: 5px;
+}
+
+.bord-rd-tr {
+    border-top-right-radius: 5px;
+}
+
+.bord-rd-bl {
+    border-bottom-left-radius: 5px;
+}
+
+.bord-rd-br {
+    border-bottom-right-radius: 5px;
 }
 
 .fl-left {
