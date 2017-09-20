@@ -22,10 +22,10 @@ echo 'register';
         <input type="text" name="dob"/>
         <br/>
         <label>username</label>
-        <input type="text" name="firstName"/>
+        <input type="text" name="username"/>
         <br/>
         <label>password</label>
-        <input type="text" name="firstName"/>
+        <input type="text" name="password"/>
         <br/>
         <label>email</label>
         <input type="text" name="email"/>

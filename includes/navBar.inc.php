@@ -67,10 +67,26 @@
                             <input type="text" class="form-control" placeholder="Enter last name" name="lastName">
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            <label for="lastName">Date of Birth:</label>
+                            <input type="text" class="form-control" placeholder="Enter D.O.B" name="dob">
                         </div>
-                        <button type="submit" class="jab6Btn">Register</button>    
+                        <div class="form-group">
+                            <label for="lastName">Username</label>
+                            <input type="text" class="form-control" placeholder="Enter username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" placeholder="Enter password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" placeholder="Enter email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="phone" class="form-control" placeholder="Enter phone number" name="phone">
+                        </div>
+                        <button type="submit" class="jab6Btn fs-16">Register</button>    
                     </form>
                 </div>
                 <!-- <div class="modal-footer bord-rd-bl bord-rd-br">
