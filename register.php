@@ -1,4 +1,4 @@
-<?php 
+<?php
 //include('classes/user.php');
 
 // spl_autoload_register(function($className){
@@ -11,7 +11,7 @@ include('factory/userFactory.php');
 echo 'register';
 ?>
 
-<form method="post" action="logic/checklogin.php">
+<form method="post" action="logic/checklogin.php" name="register">
         <label>firstName</label>
         <input type="text" name="firstName"/>
         <br/>
@@ -22,13 +22,13 @@ echo 'register';
         <input type="text" name="dob"/>
         <br/>
         <label>username</label>
-        <input type="text" name="firstName"/>
+        <input type="text" name="userName"/>
         <br/>
         <label>password</label>
-        <input type="text" name="firstName"/>
+        <input type="password" name="password"/>
         <br/>
         <label>email</label>
-        <input type="text" name="email"/>
+        <input type="email" name="email"/>
         <br/>
         <label>phone</label>
         <input type="text" name="phone"/>
@@ -36,6 +36,6 @@ echo 'register';
         <input type="submit"/>
 </form>
 
-<?php 
+<?php
     //$userFact = new PetFactory($db);
 ?>
