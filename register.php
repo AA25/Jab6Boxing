@@ -1,5 +1,9 @@
 <?php 
-include('classes/user.php');
+//include('classes/user.php');
+
+// spl_autoload_register(function($className){
+
+// })
 
 include('includes/sqlConnect.inc.php');
 include('factory/userFactory.php');
