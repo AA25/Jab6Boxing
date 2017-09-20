@@ -18,7 +18,7 @@
                                 <input name="username" type="text" id="username" placeholder="Username">
                                 <label for="password"></label>
                                 <input name="password" type="password" id="password" placeholder="Password">
-                                <input id="submitBtn" type="submit" name="Submit" value="Log In">
+                                <input id="loginBtn" type="submit" name="Submit" value="Log In">
                             </form>
                             <div id="register">
                                 <!-- <button type="button" id="registerBtn" class="btn btn-link" data-toggle="modal" data-target="#registerModal">
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group">
                             <label for="lastName">Username</label>
-                            <input type="text" class="form-control" placeholder="Enter username" name="username">
+                            <input type="text" class="form-control" placeholder="Enter username" name="userName">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
@@ -80,13 +80,13 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" placeholder="Enter email" name="email">
+                            <input type="email" id="email" class="form-control" placeholder="Enter email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
                             <input type="phone" class="form-control" placeholder="Enter phone number" name="phone">
                         </div>
-                        <button type="submit" class="jab6Btn fs-16">Register</button>    
+                        <button type="submit" class="jab6Btn fs-16" style="margin-left:87%">Register</button>    
                     </form>
                 </div>
                 <!-- <div class="modal-footer bord-rd-bl bord-rd-br">

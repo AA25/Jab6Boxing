@@ -283,7 +283,7 @@ body {
     background-color: lightgrey;
 }
 
-#submitBtn {
+#loginBtn {
     color: white !important;
     border-style: solid !important;
     border-width: 1px !important;
@@ -291,11 +291,11 @@ body {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
 }
 
-#submitBtn:focus {
+#loginBtn:focus {
     transform: scale(1.2) perspective(1px);
 }
 
-#submitBtn:hover {
+#loginBtn:hover {
     transform: scale(1.2) perspective(1px);
 }
 
