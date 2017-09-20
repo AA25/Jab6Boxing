@@ -107,7 +107,7 @@ file_put_contents('results.txt', $serializedData);
 
       <form method="post" action="logic/checklogin.php">
         <label>Username</label>
-        <input type="text" name="username"/>
+        <input type="text" name="userName"/>
         <br/>
         <label>Password</label>
         <input type="password" name="password"/>
