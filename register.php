@@ -1,6 +1,7 @@
 <?php 
-include('includes/sqlConnect.inc.php');
 include('classes/user.php');
+
+include('includes/sqlConnect.inc.php');
 include('factory/userFactory.php');
 
 echo 'register';
