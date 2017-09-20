@@ -1,5 +1,13 @@
 <?php
 include('includes/sessions.inc.php');
+include('classes/user.php');
+// spl_autoload_register(function($className){
+//   $className = strtolower($className);
+//   require __DIR__."/classes/$className.php";
+// });
+
+$alice = new User("Alice", "Palmer", "1994-12-18", "alicerose1812", "hello", "alicerosepalmer123@hotmail.co.uk", "07715963802", 1, 0);
+echo $alice->getMe();
 
 date_default_timezone_set('Europe/London');
 
@@ -35,7 +43,7 @@ file_put_contents('results.txt', $serializedData);
     if(isset($_SESSION['login'])){
       ?>
       <a href="logic/logout.php">Logout</a>
-      
+
       <div class="container">
       <form method="post" action="saveBet.php">
 
@@ -106,7 +114,7 @@ file_put_contents('results.txt', $serializedData);
         <br/>
         <input type="submit"/>
       </form>
-      
+
       <?php
     }
     ?>

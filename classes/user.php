@@ -10,7 +10,7 @@
         private $type;
         private $points;
 
-        function __constructor($firstName,$lastName,$dob,$username,$password,$email,$phone,$type){
+        function __construct($firstName,$lastName,$dob,$username,$password,$email,$phone,$type){
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->dob = $dob;
@@ -21,5 +21,11 @@
             $this->type = $type;
             $this->points = 0;
         }
+
+        function getMe(){
+            return $this->firstName;
+        }
+
+
     }
 ?>
