@@ -1,10 +1,10 @@
 <?php
 include('includes/sessions.inc.php');
-include('classes/user.php');
-// spl_autoload_register(function($className){
-//   $className = strtolower($className);
-//   require __DIR__."/classes/$className.php";
-// });
+// include('classes/user.php');
+spl_autoload_register(function($className){
+  $className = strtolower($className);
+  require __DIR__."/classes/$className.php";
+});
 
 $alice = new User("Alice", "Palmer", "1994-12-18", "alicerose1812", "hello", "alicerosepalmer123@hotmail.co.uk", "07715963802", 1, 0);
 echo $alice->getMe();
