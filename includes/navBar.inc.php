@@ -37,7 +37,7 @@
                 <div class="clearfix"></div>
                 <div class="disp-block">
                     <ul id="navList" class="list-inline">
-                        <li><a href="#">Play Jab 6</a></li>
+                        <li><a href="#">Play Jab6</a></li>
                         <li><a href="#">Results</a></li>
                         <li><a href="leaderboard.php">Leaderboard</a></li>
                         <li><a href="#">Placeholder</a></li>

@@ -1,5 +1,6 @@
 <?php
-	include_once('includes/sessions.inc.php');
+    include_once('includes/sessions.inc.php');
+    include('includes/sqlConnect.inc.php');
 ?>
 
 <html>
