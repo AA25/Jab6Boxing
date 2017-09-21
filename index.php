@@ -45,7 +45,7 @@ date_default_timezone_set('Europe/London');
     <?php
     if(isset($_SESSION['login'])){
       ?>
-      <a href="logic/logout.php">Logout</a>
+      <a href="logic/logout.php" style="float:right;width:70%">Logout</a>
 
       <div class="container">
       <form method="post" action="">
@@ -126,9 +126,9 @@ date_default_timezone_set('Europe/London');
               <option value="13">Points</option>
           </select>
         </div>
-        <br>
+        <br><br><br>
               
-        <strong>Golden Glove Prediction</strong>
+        <font color="gold"><strong>Golden Glove Prediction</strong></font>
         <div class="goldenGlove">
           <select name="goldenGlove">
               <option value="0">McGregor vs Mayweather</option>
