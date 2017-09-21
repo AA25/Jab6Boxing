@@ -10,7 +10,8 @@ spl_autoload_register(function($className){
 if(isset($_SESSION['login'])){
 
     $getUser = $pdo->query(
-      "select userName, points from users"
+      "select userName, points from users
+      order by points DESC"
     );
 
     ?>
