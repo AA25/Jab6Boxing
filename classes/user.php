@@ -22,10 +22,81 @@
             $this->points = 0;
         }
 
-        function getMe(){
+        function getFirstName(){
             return $this->firstName;
         }
 
+        function getLastName(){
+            return $this->lastName;
+        }
+
+        function getDoB(){
+            return $this->dob;
+        }
+
+        function getUserName(){
+            return $this->username;
+        }
+
+        function getPassword(){
+            return $this->password;
+        }
+
+        function getEmail(){
+            return $this->email;
+        }
+
+        function getPhone(){
+            return $this->phone;
+        }
+
+        function getType(){
+            return $this->type;
+        }
+
+        function getPoints(){
+            return $this->points;
+        }
+
+        function setFirstName($firstName){
+            $this->firstName = $firstName;
+        }
+
+        function setLastName($lastName){
+            $this->lastName = $lastName;
+        }
+
+        function setDoB($dob){
+            $this->dob = $dob;
+        }
+
+        function setUsername($username){
+            $this->username = $username;
+        }
+
+        function setPassword($password){
+            $this->password = $password;
+        }
+
+        function setEmail($email){
+            $this->email = $email;
+        }
+
+        function setPhone($phone){
+            $this->phone = $phone;
+        }
+
+        function setType($type){
+            $this->type = $type;
+        }
+
+        function setPoints($points){
+            $this->points = $points;
+        }
+
+        public function passwordValid($pass){
+            return password_verify($pass, $this->password);
+        }
 
     }
 ?>

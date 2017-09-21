@@ -12,29 +12,29 @@ spl_autoload_register(function($className){
 
 date_default_timezone_set('Europe/London');
 
-$results = array(
-    array("Mayweather", 10),
-    array("Ward", 13),
-    array("Draw", 13),
-    array("Joshua", 5),
-    array("Froch", 8),
-    array("Haye", 10),
-    0
-);
+// $results = array(
+//     array("Mayweather", 10),
+//     array("Ward", 13),
+//     array("Draw", 13),
+//     array("Joshua", 5),
+//     array("Froch", 8),
+//     array("Haye", 10),
+//     0
+// );
 
-$betByTime = strtotime("+1 minute", time());
-$betBySerialize = serialize($betByTime);
-// save serialized data in a text file
-file_put_contents('betBy.txt', $betBySerialize);
+// $betByTime = strtotime("+1 minute", time());
+// $betBySerialize = serialize($betByTime);
+// // save serialized data in a text file
+// file_put_contents('betBy.txt', $betBySerialize);
 
-$betsSerialize = serialize(array());
-// save serialized data in a text file
-file_put_contents('bets.txt', $betsSerialize);
+// $betsSerialize = serialize(array());
+// // save serialized data in a text file
+// file_put_contents('bets.txt', $betsSerialize);
 
 
-$serializedData = serialize($results);
-// save serialized data in a text file
-file_put_contents('results.txt', $serializedData);
+// $serializedData = serialize($results);
+// // save serialized data in a text file
+// file_put_contents('results.txt', $serializedData);
 
 ?>
 <html>
@@ -66,6 +66,7 @@ file_put_contents('results.txt', $serializedData);
             $eventTime->setTime(21,00,00);
             $eventTime->format('Y-m-d H:i:s');
             $eventTime = date_timestamp_get($eventTime);
+
               
             if ($currentTime < $eventTime){
                 $currentEvent = $row["eventId"]; 
