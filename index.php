@@ -1,6 +1,6 @@
 <?php
 include('includes/sessions.inc.php');
-// include('classes/user.php');
+
 spl_autoload_register(function($className){
   $className = strtolower($className);
   require __DIR__."/classes/$className.php";
@@ -45,7 +45,7 @@ file_put_contents('results.txt', $serializedData);
     <?php
     if(isset($_SESSION['login'])){
       ?>
-      <a href="logic/logout.php">Logout</a>
+      <a href="logic/logout.php" style="float:right;width:70%">Logout</a>
 
       <div class="container">
       <form method="post" action="saveBet.php">
@@ -126,9 +126,9 @@ file_put_contents('results.txt', $serializedData);
               <option value="13">Points</option>
           </select>
         </div>
-        <br>
+        <br><br><br>
               
-        <strong>Golden Glove Prediction</strong>
+        <font color="gold"><strong>Golden Glove Prediction</strong></font>
         <div class="goldenGlove">
           <select name="goldenGlove">
               <option value="0">McGregor vs Mayweather</option>
