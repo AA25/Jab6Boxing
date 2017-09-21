@@ -2,7 +2,8 @@
             <div class="container">
                 <div class="mart-28 padt-10">
                     <div id="logo" class="disp-in">
-                        <h1 class="mar-0">Jab 6 Boxing</h1>
+                        <!-- <h1 class="mar-0">Jab 6 Boxing</h1> -->
+                        <img src="/images/realLogo.png" alt=""height = 100px width = 180px>
                     </div>
                     <?php if(isset($_SESSION['login'])){ ?>
                         <div id="login"class="disp-in">
@@ -25,31 +26,31 @@
                                     <i class="fa fa-user-plus fa-1p4x" aria-hidden="true"></i>
                                     <span class="fs-14">Register</span>
                                 </button> -->
-                                <a id="registerBtn" href="#" data-toggle="modal" data-target="#registerModal">   
+                                <a id="registerBtn" href="#" data-toggle="modal" data-target="#registerModal">
                                     <i class="fa fa-user-plus fa-1p4x" aria-hidden="true"></i>
                                     <span class="fs-14">Register</span>
                                 </a>
-                            </div>    
+                            </div>
                         </div>
-                    <?php } ?> 
-                </div>  
+                    <?php } ?>
+                </div>
                 <div class="clearfix"></div>
                 <div class="disp-block">
                     <ul id="navList" class="list-inline">
                         <li><a href="#" target="_blank">Play Jab 6</a></li>
                         <li><a href="#" target="_blank">Results</a></li>
-                        <li><a href="#" target="_blank">Leaderboard</a></li>
+                        <li><a href="leaderboard.php" target="_blank">Leaderboard</a></li>
                         <li><a href="#" target="_blank">Placeholder</a></li>
                         <li><a href="#" target="_blank">How to Play</a></li>
                     </ul>
-                </div>   
+                </div>
             </div>
         </div>
 
         <!-- Modal -->
         <div class="modal fade" id="registerModal" role="dialog">
             <div class="modal-dialog">
-            
+
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header cl-white bg-jab6 bord-rd-tl bord-rd-tr">
@@ -86,13 +87,13 @@
                             <label for="phone">Phone:</label>
                             <input type="phone" class="form-control" placeholder="Enter phone number" name="phone">
                         </div>
-                        <button type="submit" class="jab6Btn fs-16" style="margin-left:87%">Register</button>    
+                        <button type="submit" class="jab6Btn fs-16" style="margin-left:87%">Register</button>
                     </form>
                 </div>
                 <!-- <div class="modal-footer bord-rd-bl bord-rd-br">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div> -->
             </div>
-            
+
             </div>
         </div>

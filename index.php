@@ -1,5 +1,6 @@
 <?php
 include('includes/sessions.inc.php');
+include('includes/sqlConnect.inc.php');
 
 spl_autoload_register(function($className){
   $className = strtolower($className);
@@ -47,106 +48,79 @@ date_default_timezone_set('Europe/London');
       ?>
       <a href="logic/logout.php" style="float:right;width:70%">Logout</a>
 
-      <div class="container">
-      <form method="post" action="">
+        <?php 
+          $boxer1 = []; 
+          $boxer2 = [];
+          $currentEvent = 0;
+          $currentTime = new datetime('2017-03-01');
+          $currentTime->setTime(21,00,00);
+          // echo $currentTime->format('Y-m-d H:i:s');
+          // echo "<br>";
+          // echo date_timestamp_get($currentTime);
+          // echo "<br>";
 
-        <div class="match">
-        <div style= "float:left;width:15%">
-         <b><input type="radio" name="match1" value="McGregor"> McGregor<br></b>
-         <b><input type="radio" name="match1" value="Mayweather"> Mayweather<br></b>
-         <b><input type="radio" name="match1" value="Draw"> Draw<br></b>
-          <select name="match1Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
+          $r = $pdo->query("select * from event");
+          foreach($r as $row){
+            $dateTime = explode(" ", $row["startTime"]);
+            $eventTime = new datetime($dateTime[0]);
+            $eventTime->setTime(21,00,00);
+            $eventTime->format('Y-m-d H:i:s');
+            $eventTime = date_timestamp_get($eventTime);
 
-        <div class="match">
-          <b><input type="radio" name="match2" value="Ward"> Ward<br></b>
-          <b><input type="radio" name="match2" value="Jacobs"> Jacobs<br></b>
-          <b><input type="radio" name="match2" value="Draw"> Draw<br></b>
-          <select name="match2Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
-        <br>
-
-        <div class="match">
-        <div style= "float:left;width:15%">
-          <b><input type="radio" name="match3" value="Golovkin"> Golovkin<br></b>
-          <b><input type="radio" name="match3" value="Canelo"> Canelo<br></b>
-          <b><input type="radio" name="match3" value="Draw"> Draw<br></b>
-          <select name="match3Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
-
-        <div class="match">
-          <b><input type="radio" name="match4" value="Joshua"> Joshua<br></b>
-          <b><input type="radio" name="match4" value="Fury"> Fury<br></b>
-          <b><input type="radio" name="match4" value="Draw"> Draw<br></b>
-          <select name="match4Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
-        <br>
-
-        <div class="match">
-        <div style= "float:left;width:15%">
-          <b><input type="radio" name="match5" value="Froch"> Froch<br></b>
-          <b><input type="radio" name="match5" value="Groves"> Groves<br></b>
-          <b><input type="radio" name="match5" value="Draw"> Draw<br></b>
-          <select name="match5Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
-
-        <div class="match">
-          <b><input type="radio" name="match6" value="Haye"> Haye<br></b>
-          <b><input type="radio" name="match6" value="Bellew"> Bellew<br></b>
-          <b><input type="radio" name="match6" value="Draw"> Draw<br></b>
-          <select name="match6Round">
-            <?php for($i = 1; $i < 13; $i++){ ?>
-              <option value="<?php echo $i ?>"><?php echo $i ?></option>
-            <?php } ?>
-              <option value="13">Points</option>
-          </select>
-        </div>
-        <br><br><br>
               
-        <font color="gold"><strong>Golden Glove Prediction</strong></font>
-        <div class="goldenGlove">
-          <select name="goldenGlove">
-              <option value="0">McGregor vs Mayweather</option>
-              <option value="1">Ward vs Jacobs</option>
-              <option value="2">Golovkin vs Canelo</option>
-              <option value="3">Joshua vs Fury</option>
-              <option value="4">Froch vs Groves</option>
-              <option value="5">Haye vs Bellew</option>
-          </select>
-        </div>
-        <br><i>The fight that will finish earliest out of the six selected matches. <br>
-        Your Golden Glove prediction will be used if a tie breaker is needed. <br>
-        For more information see FAQs.</strong></i><br><br>
-        <input type="submit" style="width:100px; height:80px;"/>
+            if ($currentTime < $eventTime){
+                $currentEvent = $row["eventId"]; 
+
+                $r = $pdo->prepare("select matchName from boxingMatches where eventId = :currentEvent");
+                $r->execute(['currentEvent'=>$currentEvent]);
+                foreach($r as $row){
+                 // echo $row['matchName'];
+                 // echo "<br>";
+                $boxerArray = explode(" ", $row['matchName']); 
+                array_push($boxer1, $boxerArray[0]);
+                array_push($boxer2, $boxerArray[2]);
+
+                }
+                break; 
+              }
+            }  
+           // var_dump($boxer1);
+           // var_dump($boxer2);
 
 
-      </form>
-    </div>
+        ?>
+
+          <form method="post" action="">
+            <?php 
+            for($i = 0; $i < count($boxer1); $i++){
+              echo '<div class="match">
+                      <b><input type="radio" name="match '.$i.'" value="'.$boxer1[$i].'">'.$boxer1[$i].'<br></b>
+                      <b><input type="radio" name="match '.$i.'" value="'.$boxer2[$i].'">'.$boxer2[$i].'<br></b>
+                      <b><input type="radio" name="match '.$i.'" value="Draw">Draw<br></b>
+                      <select name="match'.$i.'Round">';
+                  for($rs = 1; $rs < 13; $rs++){
+                    echo '<option value="'.$rs.'">'.$rs.'</option>';
+                  }
+                    echo '<option value="13">Points</option></select></div><br>'; 
+            }
+
+            echo '<font color="gold"><strong>Golden Glove Prediction</strong></font>
+            <div class="goldenGlove">
+              <select name="goldenGlove">';
+
+              for($i = 0; $i < count($boxer1); $i++){
+                  echo '<option value="'.$i.'">'.$boxer1[$i].' vs '.$boxer2[$i].'</option>';
+              }
+             echo '</select>
+            </div>';
+
+            echo '<br><i>The fight that will finish earliest out of the six selected matches. <br>
+            Your Golden Glove prediction will be used if a tie breaker is needed. <br>
+            For more information see FAQs.</strong></i><br><br>
+            <input type="submit" style="width:100px; height:80px;"/>';
+            ?>
+          </form>
+      </div>
 
       <?php
     } else {
