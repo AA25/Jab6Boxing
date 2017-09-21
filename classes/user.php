@@ -22,10 +22,45 @@
             $this->points = 0;
         }
 
-        function getMe(){
+        function getFirstName(){
             return $this->firstName;
         }
 
+        function getLastName(){
+            return $this->lastName;
+        }
+
+        function getDoB(){
+            return $this->dob;
+        }
+
+        function getUserName(){
+            return $this->username;
+        }
+
+        function getPassword(){
+            return $this->password;
+        }
+
+        function getEmail(){
+            return $this->email;
+        }
+
+        function getPhone(){
+            return $this->phone;
+        }
+
+        function getType(){
+            return $this->type;
+        }
+
+        function getPoints(){
+            return $this->points;
+        }
+
+        public function passwordValid($pass){
+            return password_verify($pass, $this->password);
+        }
 
     }
 ?>
