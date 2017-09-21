@@ -1,6 +1,6 @@
 <?php
 include('includes/sessions.inc.php');
-// include('classes/user.php');
+
 spl_autoload_register(function($className){
   $className = strtolower($className);
   require __DIR__."/classes/$className.php";

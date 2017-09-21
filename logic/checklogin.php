@@ -4,14 +4,12 @@ include('../includes/sessions.inc.php');
 include('../includes/sqlConnect.inc.php');
 
 if(isset($_POST['firstName'])){
-
   //register
   $r = $pdo->prepare(
-    "insert into
-    users (firstName, lastName, dob, userName, password, email, phone, type, points)
-    values(:firstName, :lastName, :dob, :userName, :password, :email, :phone, :type, :points);"
+    "insert into users (firstName, lastName, dob, userName, password, email, phone, type, points) 
+    values (:firstName, :lastName, :dob, :userName, :password, :email, :phone, :type, :points);"
   );
-  $r->execute([
+  $result = $r->execute([
     'firstName' => $_POST['firstName'],
     'lastName' => $_POST['lastName'],
     'dob' => $_POST['dob'],
@@ -25,7 +23,7 @@ if(isset($_POST['firstName'])){
 
   $_SESSION['login'] = 1;
   $_SESSION['userName'] = $_POST['userName'];
-
+    
   header('Location: ../index.php');
 
 }
