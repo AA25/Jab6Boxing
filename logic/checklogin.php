@@ -3,22 +3,20 @@
 include('../includes/sessions.inc.php');
 include('../includes/sqlConnect.inc.php');
 
-<<<<<<< HEAD
 spl_autoload_register(function($class){
     $class = strtolower($class);
     require __DIR__."/../classes/$class.php";
 });
 
-=======
->>>>>>> e0f51078458d77080bffe131a96bc127108a3d50
 if(isset($_POST['firstName'])){
   //register
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $r = $pdo->prepare(
-    "insert into users (firstName, lastName, dob, userName, password, email, phone, type, points)
-    values (:firstName, :lastName, :dob, :userName, :password, :email, :phone, :type, :points);"
+    "insert into
+    users (firstName, lastName, dob, userName, password, email, phone, type, points)
+    values(:firstName, :lastName, :dob, :userName, :password, :email, :phone, :type, :points);"
   );
-  $result = $r->execute([
+  $r->execute([
     'firstName' => $_POST['firstName'],
     'lastName' => $_POST['lastName'],
     'dob' => $_POST['dob'],
