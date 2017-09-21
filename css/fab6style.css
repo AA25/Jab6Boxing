@@ -12,12 +12,37 @@ body {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
 }
 
+.jab6Btn {
+    color: white !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: white;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #122d68 20%, #d61726);
+}
+
+#jab6Btn:focus {
+    transform: scale(1.2) perspective(1px);
+}
+
+#jab6Btn:hover {
+    transform: scale(1.2) perspective(1px);
+}
+
 .w-100 {
     width: 100px;
 }
 
+.w-100p {
+    width: 100%;
+}
+
 .w-50p {
     width: 50%;
+}
+
+.w-25p {
+    width: 25%;
 }
 
 .center {
@@ -43,6 +68,10 @@ body {
 
 .mar-0 {
     margin: 0px;
+}
+
+.mar-10 {
+    margin: 10px;
 }
 
 .mart-0 {
@@ -73,6 +102,14 @@ body {
     margin-bottom: 14px;
 }
 
+.pad-5 {
+    padding: 5px;
+}
+
+.pad-10 {
+    padding: 10px;
+}
+
 .padt-5 {
     padding-top: 5px;
 }
@@ -95,6 +132,10 @@ body {
 
 .fs-14 {
     font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
 }
 
 .fs-18 {
@@ -221,6 +262,16 @@ body {
     color: black;
 }
 
+#registerForm input {
+    font-size: 12px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: lightgray;
+    color: black;
+    margin-bottom: 5px;
+}
+
 #loginForm label {
     margin-bottom: 0px;
     margin-right: 5px;
@@ -232,7 +283,7 @@ body {
     background-color: lightgrey;
 }
 
-#submitBtn {
+#loginBtn {
     color: white !important;
     border-style: solid !important;
     border-width: 1px !important;
@@ -240,11 +291,11 @@ body {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
 }
 
-#submitBtn:focus {
+#loginBtn:focus {
     transform: scale(1.2) perspective(1px);
 }
 
-#submitBtn:hover {
+#loginBtn:hover {
     transform: scale(1.2) perspective(1px);
 }
 
