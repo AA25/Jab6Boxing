@@ -21,32 +21,62 @@ $realNoEvents = $pdo->lastInsertId();
 
 $r = $pdo->prepare(
   "insert into
-  boxingMatches (eventId, matchName)
-  values (:eventId, :matchName)"
+  boxingMatches (eventId, individualMatchId, matchName)
+  values (:eventId, :individualMatchId, :matchName)"
 );
-$r->execute([
+$worked = $r->execute([
   'matchName' => $_POST['M1'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 1
 ]);
-$r->execute([
+if(!$worked){
+  echo "Not worked1";
+  exit();
+}
+$worked = $r->execute([
   'matchName' => $_POST['M2'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 2
 ]);
-$r->execute([
+if(!$worked){
+  echo "Not worked2";
+  exit();
+}
+$worked = $r->execute([
   'matchName' => $_POST['M3'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 3
 ]);
-$r->execute([
+if(!$worked){
+  echo "Not worked3";
+  exit();
+}
+$worked = $r->execute([
   'matchName' => $_POST['M4'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 4
 ]);
-$r->execute([
+if(!$worked){
+  echo "Not worked4";
+  exit();
+}
+$worked = $r->execute([
   'matchName' => $_POST['M5'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 5
 ]);
-$r->execute([
+if(!$worked){
+  echo "Not worked5";
+  exit();
+}
+$worked = $r->execute([
   'matchName' => $_POST['M6'],
-  'eventId' => $realNoEvents
+  'eventId' => $realNoEvents,
+  'individualMatchId' => 6
 ]);
+if(!$worked){
+  echo "Not worked6";
+  exit();
+}
 
 ?>

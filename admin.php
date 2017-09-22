@@ -33,6 +33,8 @@ for($i=1; $i<=6; $i++){
           <label>End Time</label>
           <input type="text" name="endTime"/>
           <input type="submit"/>
+
+          <a href="logic/inputResults.php">Submit results</a>
 </body>
       </html>
       <?php
