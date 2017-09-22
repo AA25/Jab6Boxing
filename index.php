@@ -7,34 +7,7 @@ spl_autoload_register(function($className){
   require __DIR__."/classes/$className.php";
 });
 
-// $alice = new User("Alice", "Palmer", "1994-12-18", "alicerose1812", "hello", "alicerosepalmer123@hotmail.co.uk", "07715963802", 1, 0);
-// echo $alice->getMe();
-
 date_default_timezone_set('Europe/London');
-
-// $results = array(
-//     array("Mayweather", 10),
-//     array("Ward", 13),
-//     array("Draw", 13),
-//     array("Joshua", 5),
-//     array("Froch", 8),
-//     array("Haye", 10),
-//     0
-// );
-
-// $betByTime = strtotime("+1 minute", time());
-// $betBySerialize = serialize($betByTime);
-// // save serialized data in a text file
-// file_put_contents('betBy.txt', $betBySerialize);
-
-// $betsSerialize = serialize(array());
-// // save serialized data in a text file
-// file_put_contents('bets.txt', $betsSerialize);
-
-
-// $serializedData = serialize($results);
-// // save serialized data in a text file
-// file_put_contents('results.txt', $serializedData);
 
 ?>
 <html>
@@ -54,10 +27,6 @@ date_default_timezone_set('Europe/London');
           $currentEvent = 0;
           $currentTime = new datetime('2017-03-01');
           $currentTime->setTime(21,00,00);
-          // echo $currentTime->format('Y-m-d H:i:s');
-          // echo "<br>";
-          // echo date_timestamp_get($currentTime);
-          // echo "<br>";
 
           $r = $pdo->query("select * from event");
           foreach($r as $row){
@@ -83,10 +52,7 @@ date_default_timezone_set('Europe/London');
                 }
                 break; 
               }
-            }  
-           // var_dump($boxer1);
-           // var_dump($boxer2);
-
+            } 
 
         ?>
 
