@@ -33,6 +33,8 @@ if(isset($_POST['firstName'])){
 
   $thisUser = new User($_POST['firstName'], $_POST['lastName'], $_POST['dob'], $_POST['userName'], $_POST['password'], $_POST['email'], $_POST['phone'], 1, 0);
 
+  $_SESSION['user'] = $thisUser;
+
   header('Location: ../index.php');
 
 } else {
@@ -48,6 +50,7 @@ if(isset($_POST['firstName'])){
     if($_POST['userName'] == $userInfo['userName'] && $thisUser->passwordValid($_POST['password'])){
       $_SESSION['login'] = 1;
       $_SESSION['userName'] = $_POST['userName'];
+      $_SESSION['user'] = $thisUser;
       header('Location: ../index.php');
     } else {
       echo "Wrong username or password";
