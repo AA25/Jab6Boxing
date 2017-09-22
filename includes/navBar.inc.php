@@ -37,11 +37,11 @@
                 <div class="clearfix"></div>
                 <div class="disp-block">
                     <ul id="navList" class="list-inline">
-                        <li><a href="#" target="_blank">Play Jab 6</a></li>
-                        <li><a href="#" target="_blank">Results</a></li>
-                        <li><a href="leaderboard.php" target="_blank">Leaderboard</a></li>
-                        <li><a href="#" target="_blank">Placeholder</a></li>
-                        <li><a href="#" target="_blank">How to Play</a></li>
+                        <li><a href="#">Play Jab6</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="leaderboard.php">Leaderboard</a></li>
+                        <li><a href="#">Placeholder</a></li>
+                        <li><a href="#">How to Play</a></li>
                     </ul>
                 </div>
             </div>
