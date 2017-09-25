@@ -41,6 +41,10 @@ body {
     width: 50%;
 }
 
+.w-55p {
+    width: 55%;
+}
+
 .w-25p {
     width: 25%;
 }
@@ -66,6 +70,14 @@ body {
     color: white;
 }
 
+.cl-gold {
+    color: gold;
+}
+
+.mar-auto {
+    margin: auto;
+}
+
 .mar-0 {
     margin: 0px;
 }
@@ -82,8 +94,16 @@ body {
     margin-top: 5px;
 }
 
+.mart-10 {
+    margin-top: 10px;
+}
+
 .mart-28 {
     margin-top: 28px;
+}
+
+.mart-30 {
+    margin-top: 30px;
 }
 
 .marb-0 {
@@ -102,6 +122,22 @@ body {
     margin-bottom: 14px;
 }
 
+.marb-15 {
+    margin-bottom: 15px;
+}
+
+.marl-25p {
+    margin-left: 25%;
+}
+
+.marr-25p {
+    margin-right: 25%;
+}
+
+.pad-0 {
+    padding: 0px;
+}
+
 .pad-5 {
     padding: 5px;
 }
@@ -118,8 +154,20 @@ body {
     padding-top: 10px;
 }
 
+.padt-10p {
+    padding-top: 10%;
+}
+
 .padb-10 {
     padding-bottom: 10px;
+}
+
+.padl-20p {
+    padding-left: 20%;
+}
+
+.padr-20p {
+    padding-right: 20%;
 }
 
 .fa-1p4x {
@@ -148,6 +196,10 @@ body {
 
 .disp-bl {
     display: block;
+}
+
+.disp-fl {
+    display: flex;
 }
 
 .pos-rel {
@@ -331,7 +383,6 @@ body {
 .contentBanner {
     background-image: url('../images/blackFade.jpg');
     background-size: 1140px;
-    /* background-size: 100%; */
     height: 700px;
     background-repeat: no-repeat;
     background-position: center;
@@ -377,5 +428,38 @@ footer hr {
     border: 0;
     border-top: 0px solid;
     padding: 0;
+    background: linear-gradient(90deg, #122d68 20%, #d61726);
+}
+
+
+/* Predictions */
+
+.predictionBanner {
+    background-image: url('../images/predictionBGFade.jpg');
+    background-size: 1140px;
+    height: 670px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fighters {
+    cursor: pointer;
+    height: 162px;
+    width: 250px;
+}
+
+#predictionForm input[type="checkbox"] {
+    display: none;
+}
+
+#predictionForm label {
+    border-radius: 5px;
+}
+
+#predictionForm label img:hover {
+    transform: scale(1.1) perspective(1px);
+}
+
+:checked+label {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
 }

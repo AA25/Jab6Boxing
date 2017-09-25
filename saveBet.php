@@ -1,16 +1,18 @@
 <?php
 include('includes/sessions.inc.php');
 
-date_default_timezone_set('Europe/London');
-$timeOfBet = time();
-$recoveredBetBy = file_get_contents('betBy.txt');
-$betByTime = unserialize($recoveredBetBy);
+// date_default_timezone_set('Europe/London');
+// $timeOfBet = time();
+// $recoveredBetBy = file_get_contents('betBy.txt');
+// $betByTime = unserialize($recoveredBetBy);
 
-$recoveredBets = file_get_contents('bets.txt');
-$bets = unserialize($recoveredBets);
+// $recoveredBets = file_get_contents('bets.txt');
+// $bets = unserialize($recoveredBets);
 
-if($timeOfBet < $betByTime){
+// if($timeOfBet < $betByTime){
 
+
+  if(false == true){
   echo "Your bet has been saved!";
   ?>
   <p>Click <a href="checkResults.php">here</a> to check the results</p>
@@ -27,12 +29,11 @@ if($timeOfBet < $betByTime){
   array_push($bets, $prediction);
 
   $betsSerialize = serialize($prediction);
-  // save serialized data in a text file
   file_put_contents('bets.txt', $betsSerialize);
 
 } else {
 
-  echo "You can't bet";
+  echo $_POST['match1'];
 
 }
 
