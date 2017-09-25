@@ -34,8 +34,8 @@ for($outer = 1; $outer < count($prediction) - 1; $outer++ ){
     }
   }
 
-if(($points[0] + $points[1] + $points[2]) == 15){
-  echo $prediction[0] . " you scored won the jackpot!!!!!";
+if(($points[0] + $points[1] + $points[2]) == 30){
+  echo $prediction[0] . " you have won the Jab6 jackpot!!!";
 } else {
   echo $prediction[0] . " you scored " . ($points[0] + $points[1] + $points[2]) . " points!";
 }

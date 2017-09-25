@@ -1,4 +1,5 @@
 <?php
+
     class User {
         private $firstName;
         private $lastName;
@@ -94,6 +95,15 @@
             $this->points = $points;
         }
 
+        function getId(){
+            include('./includes/sqlConnect.inc.php');
+            
+            $r = $pdo->prepare(
+                "select userId from users where userName = :userName"
+            );
+            $r->execute(['userName' => $this->username]);
+            return $r;
+        }
         public function passwordValid($pass){
             return password_verify($pass, $this->password);
         }

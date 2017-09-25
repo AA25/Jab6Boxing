@@ -1,40 +1,53 @@
 <?php
 include('includes/sessions.inc.php');
+include('includes/sqlConnect.inc.php');
 
-// date_default_timezone_set('Europe/London');
-// $timeOfBet = time();
-// $recoveredBetBy = file_get_contents('betBy.txt');
-// $betByTime = unserialize($recoveredBetBy);
-
-// $recoveredBets = file_get_contents('bets.txt');
-// $bets = unserialize($recoveredBets);
-
-// if($timeOfBet < $betByTime){
+spl_autoload_register(function($className){
+  $className = strtolower($className);
+  require __DIR__."/classes/$className.php";
+});
 
 
-  if(false == true){
-  echo "Your bet has been saved!";
-  ?>
-  <p>Click <a href="checkResults.php">here</a> to check the results</p>
-  <?php
+date_default_timezone_set('Europe/London');
 
-  $prediction = array(
-    $_SESSION['username'],
-    array($_POST['match1'], $_POST['match1Round']),
-    array($_POST['match2'], $_POST['match2Round']),
-    array($_POST['match3'], $_POST['match3Round']),
-    $_POST['goldenGlove']
-  );
+$time = explode(" ",date('Y-m-d H:i:s'));
+$currentDate = $time[0];
+$currentTime = $time[1];
+$userId = "";
 
-  array_push($bets, $prediction);
+if(isset($_SESSION['user'])){
+  $user = unserialize (serialize ($_SESSION['user']));
+  $result = $user->getId();
+  foreach($result as $i){
+    $userId = $i['userId'];
+    break;
+  }
+  
+  $p = $pdo->prepare("insert into userPrediction (userId, eventId, tiebreakerPrediction, date, time)
+  values (:userId, :eventId, :tiebreakerPrediction, :date, :time)");
 
-  $betsSerialize = serialize($prediction);
-  file_put_contents('bets.txt', $betsSerialize);
+  $p->execute([
+    'userId' => $userId,
+    'eventId' => $_SESSION['currentEvent'],
+    'tiebreakerPrediction' => $_POST['goldenGlove'],
+    'date' => $currentDate,
+    'time' => $currentTime
+  ]);
 
-} else {
+  $predictionId = $pdo->lastInsertId();
+  for($i=1; $i<7; $i++){
+    $round = $_POST["match".$i."Round"];
+    $name = "match".$i;
+    $fighter = $_POST[$name];
+    $m = $pdo->prepare("insert into userMatchPredictions (predictionId, matchId, predictedResult, predictedRound)
+    values (:predictionId, :matchId, :predictedResult, :predictedRound)");
 
-  echo $_POST['match1'];
-
+    $m->execute([
+      'predictionId' => $predictionId,
+      'matchId' => $i,
+      'predictedResult' => $fighter,
+      'predictedRound' => $round
+    ]);
+  }  
 }
-
 ?>
