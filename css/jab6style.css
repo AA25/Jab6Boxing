@@ -37,6 +37,10 @@ body {
     width: 100%;
 }
 
+.w-45p {
+    width: 45%;
+}
+
 .w-50p {
     width: 50%;
 }
@@ -71,7 +75,7 @@ body {
 }
 
 .cl-gold {
-    color: gold;
+    color: #bf9832;
 }
 
 .mar-auto {
@@ -162,8 +166,16 @@ body {
     padding-bottom: 10px;
 }
 
+.padl-40 {
+    padding-left: 40px;
+}
+
 .padl-20p {
     padding-left: 20%;
+}
+
+.padr-40 {
+    padding-right: 40px;
 }
 
 .padr-20p {
@@ -281,11 +293,16 @@ body {
     /* display: block; */
 }
 
-#logo {
+#logoDiv {
     width: 50%;
     height: auto;
     /* background: pink; */
     float: left;
+}
+
+#logoDiv img {
+    height: 90px;
+    width: 170px;
 }
 
 #login {
@@ -444,8 +461,8 @@ footer hr {
 
 .fighters {
     cursor: pointer;
-    height: 155px;
-    width: 220px;
+    height: 140px;
+    width: 190px;
 }
 
 #predictionForm input[type="checkbox"] {
@@ -460,6 +477,7 @@ footer hr {
     transform: scale(1.1) perspective(1px);
 }
 
-:checked+label {
+
+/* :checked+label {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
-}
+} */

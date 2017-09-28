@@ -1,9 +1,9 @@
         <div id="navHeader">
             <div class="container">
                 <div class="mart-28 padt-10">
-                    <div id="logo" class="disp-in">
+                    <div id="logoDiv" class="disp-in">
                         <!-- <h1 class="mar-0">Jab 6 Boxing</h1> -->
-                        <img src="/images/realLogo.png" alt=""height = 100px width = 180px>
+                        <img src="/images/realLogo.png" alt="logo">
                     </div>
                     <?php if(isset($_SESSION['login'])){ ?>
                         <div id="login"class="disp-in">
