@@ -2,7 +2,7 @@ html,
 body {
     height: 100% !important;
     width: 100% !important;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial';
     font-size: 1em;
     background-color: black;
     color: #5B5B5B;
@@ -437,15 +437,15 @@ footer hr {
 .predictionBanner {
     background-image: url('../images/predictionBGFade.jpg');
     background-size: 1140px;
-    height: 670px;
+    /* height: 670px; */
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
 }
 
 .fighters {
     cursor: pointer;
-    height: 162px;
-    width: 250px;
+    height: 155px;
+    width: 220px;
 }
 
 #predictionForm input[type="checkbox"] {
