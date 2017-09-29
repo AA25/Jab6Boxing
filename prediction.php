@@ -62,7 +62,7 @@ if(isset($_SESSION['login'])){ ?>
                         <p class="marb-0">'.$boxer1[$i].'</p>
                         <p class="">
                           <input type="checkbox" id="'.$boxer1[$i].'" name="match'.($i+1).'" value="'.$boxer1[$i].'" data-match="match'.($i+1).'"/>
-                          <label for="'.$boxer1[$i].'"><img class="fighters" src="images/fighters/blankFighter.png"/></label>
+                          <label for="'.$boxer1[$i].'"><img class="fighters" src="images/fighters/'.$boxer1[$i].'.png"/></label>
                         </p>
                       </div>
                       <div class="padt-10p">
@@ -73,7 +73,7 @@ if(isset($_SESSION['login'])){ ?>
                         <p class="marb-0">'.$boxer2[$i].'</p>
                         <p class="">
                           <input type="checkbox" id="'.$boxer2[$i].'" name="match'.($i+1).'" value="'.$boxer2[$i].'" data-match="match'.($i+1).'"/>
-                          <label for="'.$boxer2[$i].'"><img class="fighters" src="images/fighters/blankFighter.png"/></label>
+                          <label for="'.$boxer2[$i].'"><img class="fighters" src="images/fighters/'.$boxer2[$i].'.png"/></label>
                         </p>
                       </div>
                     </div>
