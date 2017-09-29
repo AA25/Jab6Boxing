@@ -53,8 +53,7 @@ date_default_timezone_set('Europe/London');
                 break; 
               }
             } 
-
-        ?>
+          ?>
 
 <form method="post" action="saveBet.php">
   <?php 

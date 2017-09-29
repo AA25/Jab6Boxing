@@ -7,6 +7,15 @@ spl_autoload_register(function($className){
   require __DIR__."/classes/$className.php";
 });
 
+
+// for($i=1; $i<7; $i++){
+//   $round = $_POST["match".$i."Round"];
+//   $name = "match".$i;
+//   $fighter = $_POST[$name];
+//   echo $name.'<br>'.$fighter.'<br>'.$round.'<br>';
+// }  
+
+
 date_default_timezone_set('Europe/London');
 
 $time = explode(" ",date('Y-m-d H:i:s'));
@@ -21,7 +30,7 @@ if(isset($_SESSION['user'])){
     $userId = $i['userId'];
     break;
   }
-
+  
   // check if prediction already exists 
   $c = $pdo->prepare("select count(1) from userPrediction where userId = :userId AND eventId = :eventId");
   $c->execute([
@@ -29,6 +38,7 @@ if(isset($_SESSION['user'])){
     'eventId' => $_SESSION['currentEvent']
     ]);
   $exists = $c->fetch();
+  //echo $exists[0];
   // update predictions in userPredictions 
   if ($exists[0] == 0){
     $p = $pdo->prepare("insert into userPrediction (userId, eventId, tiebreakerPrediction, date, time)
@@ -58,7 +68,7 @@ if(isset($_SESSION['user'])){
       ]);
     }  
   } else {
-    // update predictions in userPrediction 
+    // update predictions in userPrediction     
     $u = $pdo->prepare("update userPrediction set tiebreakerPrediction = :tiebreakerPrediction, date = :date, time = :time where userId = :userId AND eventId = :eventId");
     $u->execute([
       'userId' => $userId,

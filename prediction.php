@@ -34,7 +34,7 @@ if(isset($_SESSION['login'])){ ?>
               
             if ($currentTime < $eventTime){
                 $currentEvent = $row["eventId"]; 
-
+                $_SESSION['currentEvent'] = $currentEvent;
                 $r = $pdo->prepare("select matchName from boxingMatches where eventId = :currentEvent");
                 $r->execute(['currentEvent'=>$currentEvent]);
                 foreach($r as $row){
