@@ -7,6 +7,8 @@
                     </div>
                     <?php if(isset($_SESSION['login'])){ ?>
                         <div id="login"class="disp-in">
+                            <span id="welcomeMsg" class="fs-18"></span>
+                            <br>
                             <a href="logic/logout.php">
                                 <i class="fa fa-sign-out fa-1p4x" aria-hidden="true"></i>
                                 <span class="fs-18">Logout</span>
@@ -16,7 +18,7 @@
                         <div id="login" class="disp-in">
                             <form id="loginForm" class="marb-10" name="loginForm" method="post" action="logic/checklogin.php">
                                 <label for="username"><i class="fa fa-user fa-1p4x" aria-hidden="true"></i></label>
-                                <input name="username" type="text" id="username" placeholder="Username">
+                                <input name="userName" type="text" id="username" placeholder="Username">
                                 <label for="password"></label>
                                 <input name="password" type="password" id="password" placeholder="Password">
                                 <input id="loginBtn" type="submit" name="Submit" value="Log In">
@@ -37,10 +39,10 @@
                 <div class="clearfix"></div>
                 <div class="disp-block">
                     <ul id="navList" class="list-inline">
-                        <li><a href="#">Play Jab6</a></li>
+                        <li><a href="./index.php">Home</a></li>
+                        <li><a href="./prediction.php">Predictions</a></li>
                         <li><a href="#">Results</a></li>
-                        <li><a href="leaderboard.php">Leaderboard</a></li>
-                        <li><a href="#">Placeholder</a></li>
+                        <li><a href="./leaderboard.php">Leaderboard</a></li>
                         <li><a href="#">How to Play</a></li>
                     </ul>
                 </div>

@@ -33,8 +33,13 @@ if(isset($_SESSION['login'])){ ?>
 
 
             if ($currentTime < $eventTime){
+<<<<<<< HEAD
                 $currentEvent = $row["eventId"];
 
+=======
+                $currentEvent = $row["eventId"];
+                $_SESSION['currentEvent'] = $currentEvent;
+>>>>>>> f8d61abb72d25b9786e3d14c93352a229ac6e6eb
                 $r = $pdo->prepare("select matchName from boxingMatches where eventId = :currentEvent");
                 $r->execute(['currentEvent'=>$currentEvent]);
                 foreach($r as $row){
@@ -61,18 +66,18 @@ if(isset($_SESSION['login'])){ ?>
                       <div>
                         <p class="marb-0">'.$boxer1[$i].'</p>
                         <p class="">
-                          <input type="checkbox" id="'.$boxer1[$i].'" name="match'.($i+1).'" value="'.$boxer1[$i].'"/>
+                          <input type="checkbox" id="'.$boxer1[$i].'" name="match'.($i+1).'" value="'.$boxer1[$i].'" data-match="match'.($i+1).'"/>
                           <label for="'.$boxer1[$i].'"><img class="fighters" src="images/fighters/blankFighter.png"/></label>
                         </p>
                       </div>
                       <div class="padt-10p">
-                        <input type="checkbox" id="draw'.($i+1).'" name="match'.($i+1).'" value="Draw"/>
+                        <input type="checkbox" id="draw'.($i+1).'" name="match'.($i+1).'" value="Draw" data-match="match'.($i+1).'"/>
                         <label for="draw'.($i+1).'"><img class="" src="images/DRAW1.png" style="height:70px; width:100px"/></label>
                       </div>
                       <div>
                         <p class="marb-0">'.$boxer2[$i].'</p>
                         <p class="">
-                          <input type="checkbox" id="'.$boxer2[$i].'" name="match'.($i+1).'" value="'.$boxer2[$i].'"/>
+                          <input type="checkbox" id="'.$boxer2[$i].'" name="match'.($i+1).'" value="'.$boxer2[$i].'" data-match="match'.($i+1).'"/>
                           <label for="'.$boxer2[$i].'"><img class="fighters" src="images/fighters/blankFighter.png"/></label>
                         </p>
                       </div>
