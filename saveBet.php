@@ -5,16 +5,7 @@ include('includes/sqlConnect.inc.php');
 spl_autoload_register(function($className){
   $className = strtolower($className);
   require __DIR__."/classes/$className.php";
-});
-
-
-// for($i=1; $i<7; $i++){
-//   $round = $_POST["match".$i."Round"];
-//   $name = "match".$i;
-//   $fighter = $_POST[$name];
-//   echo $name.'<br>'.$fighter.'<br>'.$round.'<br>';
-// }  
-
+});  
 
 date_default_timezone_set('Europe/London');
 
@@ -38,9 +29,10 @@ if(isset($_SESSION['user'])){
     'eventId' => $_SESSION['currentEvent']
     ]);
   $exists = $c->fetch();
-  //echo $exists[0];
+  echo $exists[0];
   // update predictions in userPredictions 
   if ($exists[0] == 0){
+    echo $userId . "<br>" . $_SESSION['currentEvent'] . "<br>" . $_POST['goldenGlove'] . "<br>" . $currentDate . "<br>" . $currentTime;
     $p = $pdo->prepare("insert into userPrediction (userId, eventId, tiebreakerPrediction, date, time)
     values (:userId, :eventId, :tiebreakerPrediction, :date, :time)");
   
