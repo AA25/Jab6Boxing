@@ -1,14 +1,16 @@
 $(document).ready(function() {
     $.ajax({
-        url: "./",
+        url: "./ajax.php?function=getUserName",
         data: {},
-        type: 'post',
+        type: 'get',
+        method: 'GET',
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             //Error in setting status
-            console.log("Error in checking current status via ajax")
+
         },
-        success: function() {
-            console.log("hey");
+        success: function(result) {
+
         }
+
     });
 });

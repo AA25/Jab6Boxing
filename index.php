@@ -43,6 +43,6 @@
     <?php   include_once('includes/footer.inc.php');?>
 
     <script src="js/jQuery/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/smoothScroll/smoothScroll.js"></script>
 </html>

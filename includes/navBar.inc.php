@@ -3,7 +3,7 @@
                 <div class="mart-28 padt-10">
                     <div id="logoDiv" class="disp-in">
                         <!-- <h1 class="mar-0">Jab 6 Boxing</h1> -->
-                        <img src="/images/realLogo.png" alt="logo">
+                        <a href="./index.php"><img src="/images/realLogo.png" alt="logo"></a>
                     </div>
                     <?php if(isset($_SESSION['login'])){ ?>
                         <div id="login"class="disp-in">
@@ -63,31 +63,31 @@
                     <form method="post" action="logic/checklogin.php" id="registerForm" class="marb-0">
                         <div class="form-group">
                             <label for="firstName">First Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter first name" name="firstName">
+                            <input type="text" class="form-control" placeholder="Enter first name" name="firstName" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter last name" name="lastName">
+                            <input type="text" class="form-control" placeholder="Enter last name" name="lastName" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Date of Birth:</label>
-                            <input type="text" class="form-control" placeholder="Enter D.O.B" name="dob">
+                            <input type="text" class="form-control" placeholder="Enter D.O.B" name="dob" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Username</label>
-                            <input type="text" class="form-control" placeholder="Enter username" name="userName">
+                            <input type="text" class="form-control" placeholder="Enter username" name="userName" required>
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" placeholder="Enter password" name="password">
+                            <input type="password" class="form-control" placeholder="Enter password" name="password" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter email" name="email">
+                            <input type="email" id="email" class="form-control" placeholder="Enter email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
-                            <input type="phone" class="form-control" placeholder="Enter phone number" name="phone">
+                            <input type="phone" class="form-control" placeholder="Enter phone number" name="phone" required>
                         </div>
                         <button type="submit" class="jab6Btn fs-16" style="margin-left:87%">Register</button>
                     </form>
