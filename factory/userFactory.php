@@ -14,7 +14,7 @@
                 ");
 
                 $results = $stmt->execute([
-                    'firstNme'  => $user->firstName,
+                    'firstName'  => $user->firstName,
                     'lastName'  => $user->lastName,
                     'dob'  => $user->dob,
                     'userName'  => $user->userName,
