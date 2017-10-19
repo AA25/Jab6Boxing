@@ -135,10 +135,13 @@ if(isset($_SESSION['user'])){
 
   } else {
 
+    header("location:index.php");
     //prediction doesn't exist
 
   }
 
+} else {
+  header("location:index.php");
 }
 
 ?>
