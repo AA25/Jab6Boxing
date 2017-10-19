@@ -41,7 +41,7 @@
                     <ul id="navList" class="list-inline">
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="./prediction.php">Predictions</a></li>
-                        <li><a href="#">Results</a></li>
+                        <li><a href="./checkResults.php">Results</a></li>
                         <li><a href="./leaderboard.php">Leaderboard</a></li>
                         <li><a href="./howToPlay.php">How to Play</a></li>
                     </ul>
