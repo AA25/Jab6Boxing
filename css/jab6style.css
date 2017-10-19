@@ -481,3 +481,10 @@ footer hr {
 /* :checked+label {
     background: linear-gradient(90deg, #122d68 20%, #d61726);
 } */
+
+#leaderboard th,
+td,
+tr {
+    border: 2px solid grey;
+    padding: 10px;
+}
