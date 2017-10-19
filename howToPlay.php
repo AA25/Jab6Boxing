@@ -1,3 +1,6 @@
+<?php
+include('includes/sessions.inc.php');
+ ?>
 <html>
 <head>
   <title>How To Play</title>
