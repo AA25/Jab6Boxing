@@ -11,7 +11,7 @@ include('factory/userFactory.php');
 echo 'register';
 ?>
 
-<form method="post" action="logic/checklogin.php">
+<form method="post" action="../logic/checklogin.php">
         <label>firstName</label>
         <input type="text" name="firstName"/>
         <br/>
@@ -35,7 +35,3 @@ echo 'register';
         <br/>
         <input type="submit"/>
 </form>
-
-<?php
-    //$userFact = new PetFactory($db);
-?>
