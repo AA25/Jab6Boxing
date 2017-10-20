@@ -51,6 +51,7 @@ if(isset($_POST['firstName'])){
       $_SESSION['login'] = 1;
       $_SESSION['userName'] = $_POST['userName'];
       $_SESSION['user'] = $thisUser;
+      $_SESSION['currentEvent'] = 1;
       header('Location: ../index.php');
     } else {
       echo "Wrong username or password";
