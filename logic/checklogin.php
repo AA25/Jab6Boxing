@@ -53,10 +53,8 @@ if(isset($_POST['firstName'])){
       $_SESSION['currentEvent'] = 1;
       echo 'correct';
       //header('Location: ../index.php');
-    } else {
-      echo 'wrong';
-    }
+    } 
   }
-
+  echo 'wrong';
 }
 ?>

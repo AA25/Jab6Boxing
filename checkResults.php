@@ -106,8 +106,8 @@ if(isset($_SESSION['user'])){
             ?>
             <div class="contentBanner ">
               <div class="container">
-              <h2 style="text-align: center; color: white;">Your results for this round</h2>
               <div class="row center txt-ctr" style="margin-top:19%">
+              <h2 style="text-align: center; color: white;">Your results for this round</h2>
     <?php
 
     if($points == 30){
@@ -125,7 +125,7 @@ if(isset($_SESSION['user'])){
     ?>
             <form action="updatePoints.php" method="post">
               <input type="hidden" name="points" value="<?php echo $points ?>"/>
-              <input type="submit" value="Update Results"/>
+              <input type="submit" value="Update Results" id="playBtn" class="btn bord-rd fs-18"/>
             </form>
           </div>
         </div>

@@ -45,6 +45,7 @@ $('#loginForm').submit(function (e){
             console.log("error ajax post to checklogin");
         },
         success: function(result) {
+            console.log(result);
             if(result == "correct"){
                 location.reload();
             }else if(result == "wrong"){
