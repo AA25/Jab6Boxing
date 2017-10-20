@@ -111,15 +111,15 @@ if(isset($_SESSION['user'])){
     <?php
 
     if($points == 30){
-      ?><p style="text-align: center; color: white;"><?php echo $user->getFirstName() . " you have won the Jab6 jackpot!!!"; ?></p><?php
+      ?><p style="text-align: center; color: white;"><?php echo $user->getFirstName() . " you have won the Jab6 Jackpot Prize!!!"; ?></p><?php
     } else {
       ?><p style="text-align: center; color: white;"><?php echo $user->getFirstName() . " you scored " . $points . " points!"; ?></p><?php
     }
 
     if($tiebreaker){
-      ?><p style="text-align: center; color: white;"><?php echo "You got the tiebreaker!"; ?></p><?php
+      ?><p style="text-align: center; color: white;"><?php echo "Your tiebreaker prediction was correct!"; ?></p><?php
     } else {
-      ?><p style="text-align: center; color: white;"><?php echo "You didn't get the tiebreaker"; ?></p><?php
+      ?><p style="text-align: center; color: white;"><?php echo "Your tiebreaker prediction was incorrect."; ?></p><?php
     }
 
     ?>
