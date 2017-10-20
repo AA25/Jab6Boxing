@@ -37,7 +37,8 @@ if(isset($_POST['firstName'])){
   echo 'registered';
   //header('Location: ../index.php');
 
-} else {
+} elseif(isset($_POST['userName'])) {
+  $status = '';
   //login
   $r = $pdo->prepare(
     "select userId, userName, password from users where userName = :userName"
@@ -51,10 +52,14 @@ if(isset($_POST['firstName'])){
       $_SESSION['userName'] = $_POST['userName'];
       $_SESSION['user'] = $thisUser;
       $_SESSION['currentEvent'] = 1;
-      echo 'correct';
+      $status = 'correct';
+      echo $status;
       //header('Location: ../index.php');
-    } 
+    }
   }
-  echo 'wrong';
+  if(strcmp($status,'') == 0){
+    echo 'wrong';
+  }
+  
 }
 ?>
