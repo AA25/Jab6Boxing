@@ -79,7 +79,7 @@
                       <div class="contentBanner">
                         <div class="txt-ctr cl-white padt-20p">
                           <h3>Your prediction has been placed and saved</h3>
-                          <h3>Goodluck!</h3>
+                          <h3>Good Luck!</h3>
                         </div>
                       </div>
                       ';
@@ -118,7 +118,7 @@
                         <div class="contentBanner">
                           <div class="txt-ctr cl-white padt-20p">
                             <h3>Your bet has been updated</h3>
-                            <h3>Goodluck!</h3>
+                            <h3>Good Luck!</h3>
                           </div>
                         </div>
                       ';  

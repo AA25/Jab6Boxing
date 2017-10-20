@@ -49,8 +49,8 @@ if(isset($_SESSION['login'])){ ?>
           ?>
         <div class="">
           <div class="container">
-            <h2 class="cl-white txt-ctr">Boxing event <?php echo $currentEvent ?></h2>
-            <h4 class="cl-gold txt-ctr">Select your prediction in each of the six boxing matched available</h4>
+            <h2 class="cl-white txt-ctr">Boxing Event <?php echo $currentEvent ?></h2>
+            <h4 class="cl-gold txt-ctr">Select your prediction for the selected six boxing matches and the Golden Glove tiebreaker!</h4>
             <div class="predictionBanner " style="border-style: solid;margin-top: 25px;margin-bottom: 35px;border-width: 1px;border-radius: 15px; padding-top: 15px; padding-bottom: 15px;">
               <form id="predictionForm" method="post" action="saveBet.php" class="marb-0 txt-ctr" style="">
               <?php
