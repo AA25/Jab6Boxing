@@ -25,7 +25,14 @@
         ?>
         <div class="contentBanner ">
             <div class="container">
-                
+                <div id="popContainer" class="fl-right" style="width:200px; height:200px;">
+                    <!-- <div class="alert " role="alert" style="background-color:d61726; color:white;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> Invalid login details were provided.
+                    </div> -->
+                </div>
                 <div class="row center txt-ctr" style="margin-top:19%">
                     <p class="padt-10 padb-10 marb-0 bord-rd" style="background:none;">
                         <!-- £250,000 <br> -->
@@ -45,4 +52,5 @@
     <script src="js/jQuery/jquery.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/smoothScroll/smoothScroll.js"></script>
+    <script src="js/navBar.js"></script>
 </html>

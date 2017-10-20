@@ -1,4 +1,4 @@
-        <div id="navHeader">
+<div id="navHeader">
             <div class="container">
                 <div class="mart-28 padt-10">
                     <div id="logoDiv" class="disp-in">
@@ -16,11 +16,11 @@
                         </div><br><br>
                     <?php }else{ ?>
                         <div id="login" class="disp-in">
-                            <form id="loginForm" class="marb-10" name="loginForm" method="post" action="logic/checklogin.php">
+                            <form id="loginForm" class="marb-10" name="loginForm" method="post" action="">
                                 <label for="username"><i class="fa fa-user fa-1p4x" aria-hidden="true"></i></label>
-                                <input name="userName" type="text" id="username" placeholder="Username">
+                                <input name="userName" type="text" id="username" placeholder="Username" required>
                                 <label for="password"></label>
-                                <input name="password" type="password" id="password" placeholder="Password">
+                                <input name="password" type="password" id="password" placeholder="Password" required>
                                 <input id="loginBtn" type="submit" name="Submit" value="Log In">
                             </form>
                             <div id="register">
@@ -41,12 +41,14 @@
                     <ul id="navList" class="list-inline">
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="./prediction.php">Predictions</a></li>
-                        <li><a href="./checkResults.php">Results</a></li>
+                        <li><a href="#">Results</a></li>
                         <li><a href="./leaderboard.php">Leaderboard</a></li>
-                        <li><a href="./howToPlay.php">How to Play</a></li>
+                        <li><a href="#">How to Play</a></li>
                     </ul>
                 </div>
+
             </div>
+            
         </div>
 
         <!-- Modal -->
@@ -60,7 +62,7 @@
                     <h4 class="modal-title">REGISTRATION DETAILS</h4>
                 </div>
                 <div class="modal-body bord-rd-bl bord-rd-br">
-                    <form method="post" action="logic/checklogin.php" id="registerForm" class="marb-0">
+                    <form method="post" action="" id="registerForm" class="marb-0">
                         <div class="form-group">
                             <label for="firstName">First Name:</label>
                             <input type="text" class="form-control" placeholder="Enter first name" name="firstName" required>

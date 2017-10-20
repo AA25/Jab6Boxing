@@ -34,8 +34,8 @@ if(isset($_POST['firstName'])){
   $thisUser = new User($_POST['firstName'], $_POST['lastName'], $_POST['dob'], $_POST['userName'], $_POST['password'], $_POST['email'], $_POST['phone'], 1, 0);
 
   $_SESSION['user'] = $thisUser;
-
-  header('Location: ../index.php');
+  echo 'registered';
+  //header('Location: ../index.php');
 
 } else {
   //login
@@ -43,7 +43,6 @@ if(isset($_POST['firstName'])){
     "select userId, userName, password from users where userName = :userName"
   );
   $r->execute(['userName' => $_POST['userName']]);
-
   foreach ($r as $userInfo) {
     $userFactory = new userFactory($pdo);
     $thisUser = $userFactory->getUserFromId($userInfo['userId']);
@@ -51,9 +50,10 @@ if(isset($_POST['firstName'])){
       $_SESSION['login'] = 1;
       $_SESSION['userName'] = $_POST['userName'];
       $_SESSION['user'] = $thisUser;
-      header('Location: ../index.php');
+      echo 'correct';
+      //header('Location: ../index.php');
     } else {
-      echo "Wrong username or password";
+      echo 'wrong';
     }
   }
 
