@@ -50,6 +50,7 @@ if(isset($_POST['firstName'])){
       $_SESSION['login'] = 1;
       $_SESSION['userName'] = $_POST['userName'];
       $_SESSION['user'] = $thisUser;
+      $_SESSION['currentEvent'] = 1;
       echo 'correct';
       //header('Location: ../index.php');
     } else {

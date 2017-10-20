@@ -34,13 +34,13 @@ if(isset($_SESSION['login'])){
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
       </head>
 
-      <body id="top">
+      <body id="top" style="color: white;">
       <?php include_once('includes/productHeader.inc.php');
-            include_once('includes/navBar.inc.php'); 
+            include_once('includes/navBar.inc.php');
         ?>
 
         <div class="container" style="min-height: 700px">
-        
+
         <div align="center" style="margin-top:2%">
         <h1>Jab6 Boxing Leaderboard</h1>
         <strong><i>Leaderboard standings are calculated as per the game rules at the end of each round.</i></strong>
@@ -66,12 +66,12 @@ if(isset($_SESSION['login'])){
             }
             ?>
         </table>
-        </div> 
-        
+        </div>
+
         <div style="margin-top:5%">
         <h3><b>Points by Event <i>(Top 10)</i></b></h3>
         <form method="get" action="">
-          <select name="eventId" onchange="this.form.submit()">
+          <select style="color: black;" name="eventId" onchange="this.form.submit()">
             <?php
             foreach ($noOfEvents as $events) {
               for($i = 1; $i <= $events['MAX(eventId)']; $i++){
@@ -140,4 +140,3 @@ if(isset($_SESSION['login'])){
 }
 
 ?>
-

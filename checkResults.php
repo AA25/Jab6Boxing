@@ -123,6 +123,10 @@ if(isset($_SESSION['user'])){
     }
 
     ?>
+            <form action="updatePoints.php" method="post">
+              <input type="hidden" name="points" value="<?php echo $points ?>"/>
+              <input type="submit" value="Update Results"/>
+            </form>
           </div>
         </div>
       </div>
