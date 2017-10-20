@@ -1,13 +1,13 @@
 $('#registerForm').submit(function (e){
     e.preventDefault();
     var formData = {
-        'firstName' : $('input[name=firstName]').val(),
-        'lastName'  : $('input[name=lastName]').val(),
-        'dob'       : $('input[name=dob]').val(),
-        'userName'  : $('input[name=userName]').val(),
-        'password'  : $('input[name=password]').val(),
-        'email'     : $('input[name=email]').val(),
-        'phone'     : $('input[name=phone]').val()
+        'firstName' : $('#registerForm input[name=firstName]').val(),
+        'lastName'  : $('#registerForm input[name=lastName]').val(),
+        'dob'       : $('#registerForm input[name=dob]').val(),
+        'userName'  : $('#registerForm input[name=userName]').val(),
+        'password'  : $('#registerForm input[name=password]').val(),
+        'email'     : $('#registerForm input[name=email]').val(),
+        'phone'     : $('#registerForm input[name=phone]').val()
     };
 
     $.ajax({
