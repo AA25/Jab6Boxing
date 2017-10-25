@@ -1,15 +1,18 @@
 <?php
-
+//Include sessions and sql connection
 include('includes/sessions.inc.php');
 include('includes/sqlConnect.inc.php');
 
+//autoload classes whenever a new object is created
 spl_autoload_register(function($className){
   $className = strtolower($className);
   require __DIR__."/classes/$className.php";
 });
 
+//Set the timezone to london time
 date_default_timezone_set('Europe/London');
 
+//if the user session is set store the user in the user variable and the userId in the userId variable
 if(isset($_SESSION['user'])){
   $user = unserialize (serialize ($_SESSION['user']));
   $result = $user->getId();
@@ -18,6 +21,7 @@ if(isset($_SESSION['user'])){
     break;
   }
 
+  //Get the number of predictions the user has made for the current event
   $c = $pdo->prepare("select count(1) from userPrediction where userId = :userId AND eventId = :eventId");
   $c->execute([
     'userId' => $userId,
@@ -25,8 +29,10 @@ if(isset($_SESSION['user'])){
     ]);
   $exists = $c->fetch();
 
+  //If the user has made a prediction for the current event
   if($exists[0] ==  1){
 
+    //Get the tiebreaker prediction and predictionId for the current user and the current event
     $c = $pdo->prepare("select tiebreakerPrediction, predictionId from userPrediction where userId = :userId AND eventId = :eventId");
     $c->execute([
       'userId' => $userId,
@@ -34,6 +40,7 @@ if(isset($_SESSION['user'])){
     ]);
     $userPrediction = $c->fetch();
 
+    //Get all the match predictions from the current user for the current event
     $c = $pdo->prepare("select * from userMatchPredictions where predictionId = :predictionId");
     $c->execute([
       'predictionId' => $userPrediction['predictionId'],
@@ -41,6 +48,7 @@ if(isset($_SESSION['user'])){
 
     $userPredictions = $c;
 
+    //Get the results from the matches for the current event
     $c = $pdo->prepare("select individualMatchId, result, round, duration, matchName from boxingMatches where eventId = :eventId");
     $c->execute([
       'eventId' => $_SESSION['currentEvent'],
@@ -48,6 +56,7 @@ if(isset($_SESSION['user'])){
 
     $matchResults = $c->fetchAll();
 
+    //Get the match that finished first for the tiebraker
     $c = $pdo->prepare("select matchName from boxingMatches where eventId = :eventId order by duration limit 1");
     $c->execute([
       'eventId' => $_SESSION['currentEvent'],
@@ -56,13 +65,14 @@ if(isset($_SESSION['user'])){
     $shortestMatch = $c->fetch();
 
     $tiebreaker = false;
-
+    //If the tiebraker prediction was the same as the result set the tiebraker variable to true
     if($shortestMatch['matchName'] == $userPrediction['tiebreakerPrediction']){
       $tiebreaker = true;
     }
 
     $points = 0;
 
+    //For each of the users predictions check to see if they match the result and round
     foreach ($userPredictions as $prediction) {
 
       $option1 = 0; $option2 = 0;
@@ -131,7 +141,10 @@ if(isset($_SESSION['user'])){
         </div>
       </div>
     </body>
-    <?php   include_once('includes/footer.inc.php');?>
+    <?php
+    //Include footer
+    include_once('includes/footer.inc.php');
+    ?>
   </html>
 
     <?php
@@ -139,12 +152,13 @@ if(isset($_SESSION['user'])){
 
   } else {
 
+    //If a prediction doesn't exist redirect to home page
     header("location:index.php");
-    //prediction doesn't exist
 
   }
 
 } else {
+  //If the user isn't logged in redirect to home page
   header("location:index.php");
 }
 
