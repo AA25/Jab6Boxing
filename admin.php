@@ -9,7 +9,7 @@ spl_autoload_register(function($className){
   require __DIR__."/classes/$className.php";
 });
 
-//if the user session is set store the user in the user variable and the userId in the userId variable
+//if the user session is set store the user in the user variable
 if(isset($_SESSION['login'])){
 $user = unserialize (serialize ($_SESSION['user']));
 if($user->getType() == 1){
