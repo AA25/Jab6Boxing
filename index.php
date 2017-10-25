@@ -1,12 +1,14 @@
 <?php
+    //Include sessions and sql connection
     include_once('includes/sessions.inc.php');
     include('includes/sqlConnect.inc.php');
 
+    //autoload classes whenever a new object is created
     spl_autoload_register(function($className){
         $className = strtolower($className);
         require __DIR__."/classes/$className.php";
       });
-      
+
     date_default_timezone_set('Europe/London');
 ?>
 
@@ -20,8 +22,10 @@
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     </head>
     <body id="top">
-        <?php   include_once('includes/productHeader.inc.php');
-                include_once('includes/navBar.inc.php'); 
+        <?php
+        //Include the sky betting and gaming product header and the nav bar
+        include_once('includes/productHeader.inc.php');
+        include_once('includes/navBar.inc.php');
         ?>
         <div class="contentBanner ">
             <div class="container">
@@ -46,8 +50,11 @@
             </div>
         </div>
     </body>
-    
-    <?php   include_once('includes/footer.inc.php');?>
+
+    <?php
+    //Include footer
+    include_once('includes/footer.inc.php');
+    ?>
 
     <script src="js/jQuery/jquery.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
