@@ -1,5 +1,5 @@
 <?php
-
+    //Creating a user class with user properties
     class User {
         private $firstName;
         private $lastName;
