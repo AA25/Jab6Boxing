@@ -1,7 +1,10 @@
-//This are event listeners that will listen to which label is clicked in each of the 6 matches
+//These are event listeners that will listen to which label is clicked in each of the 6 matches
+
 $("#match1 label").click(function(event) {
+    //If an option is clicked within a match and set all labels css to none
     $("#match1 label").css("background", "none");
-    var clickedOn = event.currentTarget.htmlFor;
+    //This is the specific option clicked
+    var clickedOn = event.currentTarget.htmlFor; 
     $("label[for='" + clickedOn + "']").css("background", "linear-gradient(90deg, #122d68 20%, #d61726");
 });
 
