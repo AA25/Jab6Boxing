@@ -1,6 +1,8 @@
 <?php
 include('../includes/sqlConnect.inc.php');
 
+//Inserting results for matches for a particular event
+
 $r = $pdo->prepare(
   "update boxingMatches
   set result = :result, round = :round, duration = :duration

@@ -1,7 +1,7 @@
 <?php
 include('../includes/sqlConnect.inc.php');
 
-
+//insert events into db
 $r = $pdo->prepare(
   "insert into
   event (startTime, endTime)
@@ -17,8 +17,10 @@ if(!$worked){
   exit();
 }
 
+//The id of the last event added 
 $realNoEvents = $pdo->lastInsertId();
 
+//Insert boxing matches for the last event
 $r = $pdo->prepare(
   "insert into
   boxingMatches (eventId, individualMatchId, matchName)
