@@ -7,6 +7,7 @@
                 $this->db = $db;
             }
 
+            //Insert new user into database
             public function insert(User $user){
                 $stmt = $this->db->prepare("
                     insert into users (firstName, lastName, dob, userName, password, email, phone, type, points)
@@ -27,6 +28,7 @@
             }
             //$user->id = $this->db->lastInsertId();
 
+            //Get the user details from db based on userid
             function getUserFromId($id){
                 $getUser = $this->db->prepare(
                   "select firstName, lastName, dob, userName, password, email, phone, type, points from users where userId = :userId"
