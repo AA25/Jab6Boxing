@@ -38,12 +38,13 @@ header ('Location: index.php');
 
     <div class="container" style="color: white;">
     <h1>Admin Page</h1>
-    <h4>Enter the matches (Fighter A vs Fighter B)</h4>
+    <h4>Enter the matches for an event (Fighter A vs Fighter B)</h4>
 
-    <form method="post" action="logic/addEvent.php">
+    <form method="post" action="logic/addEvent.php" style="color: white;">
           <?php
 for($i=1; $i<=6; $i++){
   ?>
+  
 <label>Match <?php echo $i ?> - Match Name</label>
   <input type="text" name="M<?php echo $i ?>"/>
   <br/>
@@ -56,11 +57,17 @@ for($i=1; $i<=6; $i++){
           <input type="text" name="startTime"/>
           <label>End Date/Time</label>
           <input type="text" name="endTime"/>
-          <input type="submit" style="color: black;"/>
+          <input type="submit"/>
 
-          <a href="logic/inputResults.php">Submit results</a>
-
+          <!-- <a href="logic/inputResults.php">Submit results</a> -->
+      </div>
     </body>
-</html>
+    <?php   include_once('includes/footer.inc.php');?>
+
+      <script src="js/jQuery/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/smoothScroll/smoothScroll.js"></script>
+    </html>
+
 
 
