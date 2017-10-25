@@ -8,17 +8,39 @@ spl_autoload_register(function($className){
 });
 
 if(isset($_SESSION['login'])){
-  $user = unserialize (serialize ($_SESSION['user']));
-  if($user->getType() == 1){
-    echo "User is admin";
+$user = unserialize (serialize ($_SESSION['user']));
+if($user->getType() == 1){
+
+} else {
+  header ('Location: index.php');
+}
+} else {
+header ('Location: index.php');
+}
+?>
+
+
+<html>
+<head>
+    <title>Admin</title>
+    <title>Jab 6 Boxing</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jab6style.css"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body id="top">
+    <?php   include_once('includes/productHeader.inc.php');
+            include_once('includes/navBar.inc.php'); 
     ?>
-    <html>
-    <head>
-      <title>Admin</title>
-      </head>
-      <body>
-        <h1>Admin Page</h1>
-        <form method="post" action="logic/addEvent.php">
+
+    <div class="container" style="color: white;">
+    <h1>Admin Page</h1>
+    <h4>Enter the matches (Fighter A vs Fighter B)</h4>
+
+    <form method="post" action="logic/addEvent.php">
           <?php
 for($i=1; $i<=6; $i++){
   ?>
@@ -28,22 +50,17 @@ for($i=1; $i<=6; $i++){
   <?php
 }
            ?>
-          <label>Start Time</label>
+          <br>
+          <h4>Create an event (YYYY-MM-DD HH:MM:SS)</h4>
+          <label>Start Date/Time</label>
           <input type="text" name="startTime"/>
-          <label>End Time</label>
+          <label>End Date/Time</label>
           <input type="text" name="endTime"/>
-          <input type="submit"/>
+          <input type="submit" style="color: black;"/>
 
           <a href="logic/inputResults.php">Submit results</a>
-</body>
-      </html>
-      <?php
-  } else {
-    header ('Location: index.php');
-  }
-} else {
-  header ('Location: index.php');
-}
+
+    </body>
+</html>
 
 
-?>
