@@ -1,4 +1,5 @@
 <?php
+//Include sessions and sql connection
 include('includes/sessions.inc.php');
 include('includes/sqlConnect.inc.php');
 
@@ -14,8 +15,12 @@ if(isset($_SESSION['login'])){ ?>
           <link rel="icon" href="images/favicon.ico" type="image/x-icon">
       </head>
       <body id="top">
-        <?php include_once('includes/productHeader.inc.php');
-              include_once('includes/navBar.inc.php');
+       
+         <?php 
+          //Include the sky betting and gaming product header and the nav bar
+          include_once('includes/productHeader.inc.php');
+          include_once('includes/navBar.inc.php');
+
           date_default_timezone_set('Europe/London');
           $boxer1 = [];
           $boxer2 = [];
@@ -23,6 +28,7 @@ if(isset($_SESSION['login'])){ ?>
           $currentTime = new datetime('2017-03-01');
           $currentTime->setTime(21,00,00);
 
+          //Setting the start time for an event
           $r = $pdo->query("select * from event");
           foreach($r as $row){
             $dateTime = explode(" ", $row["startTime"]);
@@ -31,7 +37,7 @@ if(isset($_SESSION['login'])){ ?>
             $eventTime->format('Y-m-d H:i:s');
             $eventTime = date_timestamp_get($eventTime);
 
-
+            //Retrieving matches for current event and storing fighters for each match 
             if ($currentTime < $eventTime){
                 $currentEvent = $row["eventId"];
                 $_SESSION['currentEvent'] = $currentEvent;
@@ -47,6 +53,7 @@ if(isset($_SESSION['login'])){ ?>
               }
             }
           ?>
+
         <div class="">
           <div class="container">
             <h2 class="cl-white txt-ctr">Boxing Event <?php echo $currentEvent ?></h2>
@@ -54,6 +61,7 @@ if(isset($_SESSION['login'])){ ?>
             <div class="predictionBanner " style="border-style: solid;margin-top: 25px;margin-bottom: 35px;border-width: 1px;border-radius: 15px; padding-top: 15px; padding-bottom: 15px;">
               <form id="predictionForm" method="post" action="saveBet.php" class="marb-0 txt-ctr" style="">
               <?php
+              //Updates the HTML page by popualting the matches with the fighters
                 for($i = 0; $i < count($boxer1); $i++){
                   echo
                   '<div id="match'.($i+1).'" class="match marb-15 fl-left pad-10" style="border-style:solid; border-width:1px; border-radius:5px; border-color:#5b5b5b; margin-left:4%">
@@ -106,7 +114,9 @@ if(isset($_SESSION['login'])){ ?>
         </div>
       </body>
 
-      <?php   include_once('includes/footer.inc.php');?>
+      <?php   
+      //Include the footer on the page
+      include_once('includes/footer.inc.php');?>
 
       <script src="js/jQuery/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
