@@ -1,4 +1,5 @@
-<?php 
+<?php
+//This file is not used!!! 
    include_once('includes/sessions.inc.php');
    include('includes/sqlConnect.inc.php');
 

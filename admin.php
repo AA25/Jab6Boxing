@@ -43,7 +43,7 @@ if($user->getType() == 1){
     ?>
 
   <label>Match <?php echo $i ?> - Match Name</label>
-    <input type="text" name="M<?php echo $i ?>"/>
+    <input type="text" name="M<?php echo $i ?>" style="color:black;"/>
     <br/>
     <?php
   }
